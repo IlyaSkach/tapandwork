@@ -1,0 +1,22 @@
+.login {
+    width: 36px;
+    height: 36px;
+    background: #4B4B4B;
+    border-radius: 10px;
+    outline: none;
+    border-width: 0px;
+    /* border-color: transparent; */
+}
+
+
+
+
+
+
+.login:hover{
+    background: rgba(255, 255, 255, 1);
+}
+
+.login:hover svg{
+    fill: rgba(82, 54, 193, 1) ;
+}

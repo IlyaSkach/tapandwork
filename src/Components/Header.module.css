@@ -1,0 +1,27 @@
+.headerInner {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.headerLeft{
+    display: inline-flex;
+}
+
+.logoImg {
+    margin-top: 25px;
+}
+
+.tagline {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(140, 140, 140, 1);
+    margin-top: 36px;
+    margin-left: 30px;
+}
+
+.logbtn{
+    margin-top: 27px;
+}
