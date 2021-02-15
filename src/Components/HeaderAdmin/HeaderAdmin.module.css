@@ -1,0 +1,123 @@
+.headerInner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.headerLeft {
+    display: inline-flex;
+}
+
+.logoImg {
+    margin-top: 25px;
+}
+
+.tagline {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(140, 140, 140, 1);
+    margin-top: 36px;
+    margin-left: 30px;
+    margin-right: 225px;
+}
+
+.logbtn {
+    margin-top: 27px;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.login {
+    width: 36px;
+    height: 36px;
+    background: white;
+    border-radius: 10px;
+    outline: none;
+    border-width: 0px;
+}
+
+/* Кнопка включения/выключения панели старт */
+
+input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 30px;
+    height: 18px;
+    background: rgba(82, 82, 82, 1);
+    display: block;
+    border-radius: 100px;
+    position: relative;
+    margin-top: 10px;
+    margin-right: 5px;
+
+}
+
+label:after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 0px;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+input:checked+label {
+    background: rgba(82, 54, 193, 1);
+}
+
+input:checked+label:after {
+    left: calc(100% - 0px);
+    transform: translateX(-100%);
+}
+
+label:active:after {
+    width: 16px;
+}
+
+/* Кнопка включения/выключения панели конец */
+
+.headerText {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #5236C1;
+    margin-top: 10px;
+    margin-right: 30px;
+}
+
+.adminBtn {
+    margin-top: 25px;
+}
+
+.headerBtn {
+    padding: 10px;
+    width: 155px;
+    height: 40px;
+    background: transparent;
+    border-radius: 10px;
+    border: 2px solid #5236C1 ;
+    outline: none;
+    margin: 0px 10px 0px 10px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #FFFFFF;
+}
+
+.headerBtn:hover{
+background: #5236C1;
+}

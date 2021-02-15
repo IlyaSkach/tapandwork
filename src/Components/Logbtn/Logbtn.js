@@ -1,16 +1,18 @@
-import style from '../Logbtn/Logbtn.module.css';
 import React, { useState } from 'react';
-import FormLogIn from '../FormLogin/FormLogIn';
 
+import style from '../Logbtn/Logbtn.module.css';
+
+import FormLogIn from '../FormLogin/FormLogIn';
 
 
 function Logbtn() {
     
-   
     const [show, setShow] = useState(false);
+
     let loginShow = () => {
-        setShow(!show)
+        setShow(!show);
     }
+    
     return (
         <>
             <button className={style.login} onClick={loginShow}>

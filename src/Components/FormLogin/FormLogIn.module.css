@@ -1,6 +1,6 @@
 .form {
     height: 100vh;
-    width: 220vh;
+    width: 100vw;
     background-color: rgba(0, 0, 0, 0.4);
     position: fixed;
     top: 0;
@@ -8,13 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* transform: scale(0); */
 }
-
-/* .form.active {
-    transform: scale(1);
-} */
-
 
 .formLog {
     position: relative;
@@ -26,7 +20,6 @@
     box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.35);
     border-radius: 15px;
     align-items: center;
-    /* display: none; */
 }
 
 .formTitle {
@@ -45,25 +38,30 @@
     border: 1px solid #4B4B4B;
     box-sizing: border-box;
     box-shadow: inset 0px 3px 0px rgba(0, 0, 0, 0.03);
-    border-radius: 10px;
+    border-radius: 10px; 
 }
 
 .formBtn {
     margin-top: 30px;
     align-items: center;
-    padding: 12px 22px;
+    padding: 10px 22px;
     width: 199px;
     height: 50px;
     left: calc(50% - 199px/2 + 0px);
     top: 10px;
-    background: #5236C1;
+    background: transparent;
     border-radius: 10px;
-    border-width: 0px;
+    border: 2px solid #5236C1;
     color: #FFFFFF;
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
     line-height: 26px;
+    outline: none;
+}
+
+.formBtn:hover{
+    background: #5236C1;
 }
 
 .formBtnClose {
@@ -72,8 +70,18 @@
     top: 15px;
     border: none;
     background: transparent;
+    outline: none;
+    transition: 1s; 
+}
 
-
-    /* border: 2px solid #696969; */
-
+.formBtnClose:hover{
+    transform: scale(1.2);
+}
+.error {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #FF4062;
 }

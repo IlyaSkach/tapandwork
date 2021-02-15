@@ -1,20 +1,16 @@
-
 import './App.css';
 import React, { useState } from 'react';
 
-
 import Header from './Components/Header/Header';
-import FormLogIn from './Components/FormLogin/FormLogIn'
-
-
+import HeaderAdmin from './Components/HeaderAdmin/HeaderAdmin'
 
 
 function App() {
 
   return (
     <>
-    <Header />
-    {/* {show ? <FormLogIn /> : null } */}
+    <HeaderAdmin />
+      <Header />
     </>
   );
 }

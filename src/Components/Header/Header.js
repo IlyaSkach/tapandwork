@@ -1,11 +1,11 @@
-import Logbtn from '../Logbtn/Logbtn';
+import style from './Header.module.css';
 
-import style from '../Header.module.css';
+import Logbtn from '../Logbtn/Logbtn';
 
 
 function Header() {
-    return (
 
+    return (
         <header>
             <div className='container'>
                 <div className={style.headerInner}>
@@ -24,8 +24,6 @@ function Header() {
             </div>
         </header>
     )
-
 }
-
 
 export default Header;
