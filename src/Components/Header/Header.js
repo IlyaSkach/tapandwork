@@ -1,6 +1,6 @@
-import Logbtn from '../Components/Logbtn';
+import Logbtn from '../Logbtn/Logbtn';
 
-import style from './Header.module.css';
+import style from '../Header.module.css';
 
 
 function Header() {

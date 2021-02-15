@@ -1,6 +1,6 @@
-import style from './Logbtn.module.css';
+import style from '../Logbtn/Logbtn.module.css';
 import React, { useState } from 'react';
-import FormLogIn from '../Components/FormLogIn';
+import FormLogIn from '../FormLogin/FormLogIn';
 
 
 
