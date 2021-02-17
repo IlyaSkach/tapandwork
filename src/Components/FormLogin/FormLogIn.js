@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
+
+
 import style from '../FormLogin/FormLogIn.module.css';
 
 
@@ -6,6 +9,8 @@ function FormLogIn() {
 
     const [pass, setPass] = useState('')
     const [value, setValue] = useState('')
+    
+    let history = useHistory()
 
     let password = (event) => {
         setValue(event.target.value)
@@ -14,13 +19,14 @@ function FormLogIn() {
     let adminOn = (event) => {
         console.log(value)
         if (value == '123qwe') {
-            console.log('pass true')
+            console.log('pass true')  
+            history.push('/admin');
         }
         else {
             setPass('Неверный пароль. Пароль 123qwe')
             console.log('pass false')
             event.preventDefault();
-        }
+        }   
     }
 
     return (
