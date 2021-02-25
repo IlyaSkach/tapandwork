@@ -1,0 +1,26 @@
+.blockList {
+    margin-top: 35px;
+    background: #242424;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+
+}
+
+.blockTitle {
+    border-top: 3px solid #5236C1;
+    border-bottom: 1px solid #525252;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    color: #FFFFFF;
+    padding: 17px 20px;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 10px;
+}

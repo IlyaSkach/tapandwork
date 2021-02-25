@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch, } from "react-router-dom";
 
 import Header from './Components/Header/Header';
 import HeaderAdmin from './Components/HeaderAdmin/HeaderAdmin'
+import BlockList from './Components/BlockList/BlockList'
 
 
 function App() {
@@ -16,6 +17,11 @@ function App() {
           <Route path='/' component={Header} />
         </Switch>
       </Router>
+
+      <BlockList />
+      <BlockList />
+
+
     </>
   );
 }
