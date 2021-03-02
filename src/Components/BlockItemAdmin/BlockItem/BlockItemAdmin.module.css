@@ -11,6 +11,7 @@
     box-sizing: border-box;
     margin-left: 20px;
     margin-bottom: 20px;
+
 }
 
 .bookmarkTitle {
@@ -40,10 +41,40 @@
     left: 0px;
     top: 0px;
     background: #181818;
-    border-bottom: 1px solid #4B4B4B;  
+    border-bottom: 1px solid #4B4B4B;
+    
 }
 
 .logo{
     width: 100px;
     height: auto;
 }
+
+.btnEdition{
+    align-items: center;
+    padding: 5px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 277px;
+    top: 10px;
+    background: #242424;
+    opacity: 0.7;
+    border-radius: 10px;
+    border: none;
+}
+
+.btnClose{
+    align-items: center;
+    padding: 5px;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 317px;
+    top: 10px;
+    background: #242424;
+    opacity: 0.7;
+    border-radius: 10px;
+    border: none;
+}
+

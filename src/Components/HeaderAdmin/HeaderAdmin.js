@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import AddBookmark from '../AddBookmark/AddBookmark';
+import AddCategory from '../AddCategory/AddCategory';
 
 import style from './HeaderAdmin.module.css';
 
@@ -6,9 +8,19 @@ import style from './HeaderAdmin.module.css';
 function HeaderAdmin() {
 
     const [show, setSow] = useState(false);
+    const [addbookmark, setAddbookmark] = useState(false);
+    const [addcategory, setAddcategory] = useState(false);
 
     let toggle = () => {
         setSow(!show)
+    }
+
+    let addBookmark = () => {
+        setAddbookmark(!addbookmark)
+    }
+
+    let addCategory = () => {
+        setAddcategory(!addcategory)
     }
 
     return (
@@ -22,13 +34,19 @@ function HeaderAdmin() {
                         </div>
                     </div>
                     {show ?
-                                <div className={style.adminBtn}>
-                                    <button className={style.headerBtn}>Добавить закладку</button>
-                                    <button className={style.headerBtn}>Добавить категорию</button>
-                                </div> : null
-                            }
+                        <div className={style.adminBtn}>
+                            <button className={style.headerBtn} onClick={addBookmark}>Добавить закладку</button>
+                            <button className={style.headerBtn} onClick={addCategory}>Добавить категорию</button>
+                        </div> : null
+                    }
+                    {addbookmark ?
+                        <AddBookmark /> : null}
+
+                    {addcategory ? 
+                        <AddCategory /> : null}
+
                     <div>
-                        <div className={style.logbtn}>  
+                        <div className={style.logbtn}>
                             <input onClick={toggle} type="checkbox" id="switch" /><label for="switch">Toggle</label>
                             <div className={style.headerText}>Панель управления</div>
                             <button className={style.login}>

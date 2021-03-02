@@ -11,12 +11,12 @@
     z-index: 1;
 }
 
-.formLog {
+.AddBookmark {
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 400px;
-    height: 270px;
+    width: 522px;
+    /* height: 270px; */
     background: #242424;
     box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.35);
     border-radius: 15px;
@@ -33,35 +33,62 @@
 }
 
 .formInput {
-    width: 300px;
+    width: 422px;
     height: 50px;
     background: #242424;
     border: 1px solid #4B4B4B;
     box-sizing: border-box;
     box-shadow: inset 0px 3px 0px rgba(0, 0, 0, 0.03);
-    border-radius: 10px; 
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
-.formBtn {
-    margin-top: 30px;
-    align-items: center;
-    padding: 10px 22px;
-    width: 199px;
-    height: 50px;
-    left: calc(50% - 199px/2 + 0px);
-    top: 10px;
+.btnGroup {
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.addBtn {
+    padding: 10px;
+    width: 192px;
+    height: 40px;
     background: transparent;
     border-radius: 10px;
     border: 2px solid #5236C1;
-    color: #FFFFFF;
+    outline: none;
+    margin: 0px 10px 0px 10px;
+    font-family: Roboto;
     font-style: normal;
     font-weight: 500;
-    font-size: 20px;
-    line-height: 26px;
-    outline: none;
+    font-size: 12px;
+    line-height: 16px;
+    color: #FFFFFF;
+
+    margin-right: 121px;
 }
 
-.formBtn:hover{
+.addBtn:hover {
+    background: #5236C1;
+}
+
+.cancelBtn {
+    padding: 10px;
+    width: 102px;
+    height: 40px;
+    background: transparent;
+    border-radius: 10px;
+    border: 2px solid #5236C1;
+    outline: none;
+    margin: 0px 10px 0px 10px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #FFFFFF;
+}
+
+.cancelBtn:hover {
     background: #5236C1;
 }
 
@@ -72,18 +99,27 @@
     border: none;
     background: transparent;
     outline: none;
-    transition: 1s; 
+    transition: 1s;
 }
 
-.formBtnClose:hover{
+.formBtnClose:hover {
     transform: scale(1.2);
 }
 
-.error {
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 16px;
-    color: #FF4062;
+.coloritem{
+display: inline-block;
 }
+
+.colorbox {
+    width: 50px;
+    height: 50px;
+    left: 186px;
+    top: 0px;
+    background: #00C5AD;
+    border-radius: 10px;
+    margin: 0 6px;
+    -webkit-appearance: none;
+}
+
+
+
