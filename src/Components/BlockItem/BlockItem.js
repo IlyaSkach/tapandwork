@@ -2,10 +2,11 @@
 import style from './BlockItem.module.css';
 
 
-function BlockItem() {
+function BlockItem({title, about, img, url}) {
 
     let onSite = () => {
-        window.open('https://www.yandex.ru');
+        // window.open('https://www.yandex.ru');
+        window.open({url});
     }
 
     return (
@@ -13,10 +14,10 @@ function BlockItem() {
             <div>
                 <div className={style.bookmark} onClick={onSite}>
 
-                    <h6 className={style.bookmarkTitle}>Google</h6>
-                    <p className={style.bookmarkDiscription}>Сервис с бесплатными иконками на любой вкус и цвет и есть немного платных. Но норм.</p>
+                    <h6 className={style.bookmarkTitle}>{title}</h6>
+                    <p className={style.bookmarkDiscription}>{about}</p>
                     <div className={style.bookmarkImg}>
-                        <img className={style.logo} src='https://yastatic.net/iconostasis/_/8lFaTHLDzmsEZz-5XaQg9iTWZGE.png'/>
+                        <img className={style.logo} src={img}/>   
                     </div>
 
                 </div>
