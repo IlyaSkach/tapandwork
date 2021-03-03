@@ -1,0 +1,108 @@
+
+
+.blockList {
+    margin-top: 35px;
+    background: #242424;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    margin-bottom: 40px;
+
+}
+
+.blockTitle {
+    border-top: 3px solid #00C5AD;
+    border-bottom: 1px solid #525252;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    color: #FFFFFF;
+    padding: 17px 20px;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.blockListHead {
+    position: relative;
+}
+
+.btnDown {
+    position: absolute;
+    right: 118px;
+    top: 37.5%;
+    bottom: 37.5%;
+    border: none;
+    background: transparent;
+}
+
+.btnUp {
+    position: absolute;
+    right: 77px;
+    top: 37.5%;
+    bottom: 37.5%;
+    border: none;
+    background: transparent;
+}
+
+.btnClose {
+    position: absolute;
+    right: 36px;
+    top: 37.5%;
+    bottom: 37.5%;
+    border: none;
+    background: transparent;
+}
+
+
+/* Новый блок */
+
+.bookmark {
+    position: relative;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    /* padding: 0px; */
+    width: 357px;
+    height: 252px;
+    background: #242424;
+    border: 1px solid #4B4B4B;
+    box-sizing: border-box;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.bookmarkTitle {
+    padding-top: 174px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.bookmarkDiscription {
+    padding-top: 5px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: #8C8C8C;
+}
+
+.bookmarkImg {
+    position: absolute;
+    width: 355px;
+    height: 159px;
+    left: 0px;
+    top: 0px;
+    background: #181818;
+    border-bottom: 1px solid #4B4B4B;  
+}
