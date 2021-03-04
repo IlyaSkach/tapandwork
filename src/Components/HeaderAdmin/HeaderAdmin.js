@@ -3,26 +3,19 @@ import AddBookmark from '../AddBookmark/AddBookmark';
 import AddCategory from '../AddCategory/AddCategory';
 
 import style from './HeaderAdmin.module.css';
-
-
 function HeaderAdmin() {
-
     const [show, setSow] = useState(false);
     const [addbookmark, setAddbookmark] = useState(false);
     const [addcategory, setAddcategory] = useState(false);
-
     let toggle = () => {
         setSow(!show)
     }
-
     let addBookmark = () => {
         setAddbookmark(!addbookmark)
     }
-
     let addCategory = () => {
         setAddcategory(!addcategory)
     }
-
     return (
         <header>
             <div className='container'>
