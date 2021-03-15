@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 import AddBookmark from '../AddBookmark/AddBookmark';
 import style from './NewCategory.module.css';
 
-function NewCategory() {
+function NewCategory(data) {
+    console.log('================')
+    console.log(data);
 
     const [addbookmark, setAddbookmark] = useState(false);
 
@@ -11,14 +13,18 @@ function NewCategory() {
         setAddbookmark(!addbookmark)
     }
 
+
+
     return (
         <>
+
+
             <div className='container'>
                 <div className={style.blockList}>
                     <div className={style.blockListHead}>
-                        <h4 className={style.blockTitle}>
-                            Новая категория
-                        </h4>
+                        
+                        {data.new.map(item => <h4 className={style.blockTitle}>{item.title}</h4>)};
+                        
                         <button className={style.btnDown}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6 9L12 15L18 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
@@ -37,7 +43,7 @@ function NewCategory() {
                     </div>
                     <ul className={style.list}>
                         <div>
-                            <div className={style.bookmark} onClick={addBookmark} > 
+                            <div className={style.bookmark} onClick={addBookmark} >
                                 <h6 className={style.bookmarkTitle}>Добавить закладку</h6>
                                 <p className={style.bookmarkDiscription}>
                                     Нажмите сюда, что бы добавить новую закладку в эту категорию.</p>
@@ -51,12 +57,15 @@ function NewCategory() {
                             </div>
                         </div>
                     </ul>
-                
+
                     {addbookmark ?
                         <AddBookmark /> : null}
                 </div>
             </div>
+
+
         </>
+
 
     )
 }

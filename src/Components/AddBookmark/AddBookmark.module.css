@@ -53,6 +53,10 @@
     box-shadow: inset 0px 3px 0px rgba(0, 0, 0, 0.03);
     border-radius: 10px;
     margin-bottom: 20px;
+
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
 }
 
 .formInput {
@@ -64,6 +68,10 @@
     box-shadow: inset 0px 3px 0px rgba(0, 0, 0, 0.03);
     border-radius: 10px;
     margin-bottom: 20px; 
+
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
 }
 
 .btnGroup{

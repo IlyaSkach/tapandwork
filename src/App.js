@@ -10,12 +10,17 @@ import UserPage from './Components/UserPage/UserPage';
 import AdminPage from './Components/AdminPage/AdminPage';
 import AddBookmark from './Components/AddBookmark/AddBookmark';
 import AddCategory from './Components/AddCategory/AddCategory';
+// Added Redux 
+
+import reducer from './'
+import ViweList from './Components/NewCategory/Addnewcat';
+
 
 
 function App() {
 
   return (
-    <>
+    
       <Router>
         <Switch>
           <Route path='/admin' component={AdminPage} exact />
@@ -23,14 +28,8 @@ function App() {
         </Switch>
       </Router>
 
-      {/* <BlockList />
-      <BlockListAdmin /> */}
-
-      {/* <AddBookmark/> */}
-
-      {/* <AddCategory/> */}
       
-    </>
+
   );
 }
 

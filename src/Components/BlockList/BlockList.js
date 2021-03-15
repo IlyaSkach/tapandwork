@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import BlockItem from '../BlockItem/BlockItem';
 import BlockItemAdmin from '../BlockItemAdmin/BlockItem/BlockItemAdmin';
 import style from './BlockList.module.css';
+// Redux
+import { connect } from 'react-redux';
+import * as actions from '../../actions/addCat'
+import { bindActionCreators } from 'redux'
 
-function BlockList() {
+
+
+
+
+
+function BlockList () {
 
     const [blocks, setBlocks] = useState([
         { title: "Яндекс.Почта", about: "Сервис с бесплатными иконками на любой вкус и цвет и есть немного платных. Но норм.", img: 'https://www.google.com/s2/favicons?domain=https://mail.yandex.ru/', url: 'https://www.yandex.ru' },
@@ -13,8 +22,8 @@ function BlockList() {
         { title: "Gmail", about: "Сервис с бесплатными иконками на любой вкус и цвет и есть немного платных. Но норм.", img: 'https://www.google.com/s2/favicons?domain=https://www.google.com/intl/ru/gmail/about/', url: '' },
     ]);
 
-
     return (
+
         <>
             <div className='container'>
                 <div className={style.blockList}>
@@ -29,7 +38,80 @@ function BlockList() {
                 </div>  
             </div>
         </>
-    )
+
+)
+
 }
 
 export default BlockList;
+
+
+
+// return (
+    //     <>
+    //         {
+    //             initialState.map((item) => {
+    //                 console.log('++++++++++++')
+    //                 console.log(item)
+    //                 console.log('++++++++++++')
+    //             })
+    //         }
+    //     </>
+    // )
+
+
+
+// const mapStateToProps = (state) => {
+    
+//     console.log(state)
+
+//     return {
+//         initialState: state.block.category
+//     };
+// }
+
+
+// const mapDispatchToProps = (dispatch) => {
+//     const {TEST_TEST} = bindActionCreators(actions, dispatch)
+//       return{
+  
+//       }
+//   }
+
+// export default connect(mapStateToProps)(BlockList);
+
+
+
+
+// import React from "react";
+// import { connect } from "react-redux";
+// const App = ({initState}) => {
+//     return (
+//         <div>
+//             {initState.map((item)=>{
+//                 console.log(item)
+//             })}
+//         </div>
+//     );
+// };
+// const mapStateToProps = (state) => {
+
+//     console.log(state)
+//     return {
+//         initState: state.block.category
+//     };
+// };
+
+// export default connect(mapStateToProps)(App);
+
+
+
+
+
+
+
+
+
+
+
+ 

@@ -36,7 +36,7 @@ function HeaderAdmin() {
                         <AddBookmark /> : null}
 
                     {addcategory ? 
-                        <AddCategory /> : null}
+                        <AddCategory activeWindow={setAddcategory} /> : null}
 
                     <div>
                         <div className={style.logbtn}>

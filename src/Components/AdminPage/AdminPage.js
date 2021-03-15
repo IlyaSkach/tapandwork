@@ -1,6 +1,8 @@
 import BlockListAdmin from "../BlockListAdmin/BlockListAdmin";
 import HeaderAdmin from "../HeaderAdmin/HeaderAdmin";
 import NewCategory from "../NewCategory/NewCategory";
+import ViweList from '../NewCategory/Addnewcat'
+import Addnewcat from "../NewCategory/Addnewcat";
 
 
 
@@ -11,7 +13,8 @@ function AdminPage() {
 
             <HeaderAdmin />
             <BlockListAdmin />
-            <NewCategory />
+            {/* <NewCategory /> */}
+            <Addnewcat />
 
         </>
     );
