@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import AddBookmark from '../AddBookmark/AddBookmark';
+import DelCategory from '../DelCategory/DelCategory';
 import style from './NewCategory.module.css';
 
 function NewCategory(data) {
@@ -8,9 +9,14 @@ function NewCategory(data) {
     console.log(data);
 
     const [addbookmark, setAddbookmark] = useState(false);
+    const [del, setDel] = useState(false);
 
     let addBookmark = () => {
         setAddbookmark(!addbookmark)
+    }
+
+    const delCat = () => {
+        setDel(!del)
     }
 
 
@@ -22,9 +28,9 @@ function NewCategory(data) {
             <div className='container'>
                 <div className={style.blockList}>
                     <div className={style.blockListHead}>
-                        
-                        {data.new.map(item => <h4 className={style.blockTitle}>{item.title}</h4>)};
-                        
+
+                        {data.new.map(item => <h4 className={style.blockTitle} style={{ borderTopColor: 'blue' }}>{item.title}</h4>)};
+
                         <button className={style.btnDown}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M6 9L12 15L18 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
@@ -34,7 +40,7 @@ function NewCategory(data) {
                                 <path d="M6 15L12 9L18 15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </button>
-                        <button className={style.btnClose}>
+                        <button className={style.btnClose} onClick={delCat}>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M18 6L6 18" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                 <path d="M6 6L18 18" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -57,6 +63,9 @@ function NewCategory(data) {
                             </div>
                         </div>
                     </ul>
+
+                    {del ?
+                        <DelCategory /> : null}
 
                     {addbookmark ?
                         <AddBookmark /> : null}
