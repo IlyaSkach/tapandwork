@@ -15,6 +15,11 @@ function AddCategory({activeWindow}) {
         activeWindow(false)
     };
 
+    const fixCat = (event) => {
+        event.preventDefault(); 
+    }
+    
+
     return (
         <div className={style.form}>
             <form className={style.AddBookmark} onSubmit={formHandler} >
@@ -33,8 +38,8 @@ function AddCategory({activeWindow}) {
                     <input className={style.colorbox} type="radio" name="color" value="#FF4062" style={{backgroundColor: '#FF4062'}}/>
                 </div>
                 <div className={style.btnGroup}>
-                    <button className={style.addBtn} type="submit">Добавить категорию</button>
-                    <button className={style.cancelBtn}>Отмена</button>
+                    <button className={style.addBtn} type="submit" onClick={fixCat}>Добавить категорию</button>
+                    <button className={style.cancelBtn} >Отмена</button>
                 </div>
                 <button className={style.formBtnClose} >
                     <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
