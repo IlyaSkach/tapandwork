@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import BlockItem from '../BlockItem/BlockItem';
 import BlockItemAdmin from '../BlockItemAdmin/BlockItem/BlockItemAdmin';
+import NewCategory from '../NewCategory/NewCategory'
 import style from './BlockListAdmin.module.css';
 import { useSelector } from 'react-redux'
 
@@ -51,7 +52,15 @@ function BlockListAdmin() {
                                     </svg>
                                 </button>
                             </div>
-                            <ul className={style.list}>
+                           {/* {
+                               objectCategory.list.lenght ? <ul className={style.list}>
+                                {objectCategory.list.map((item) => {
+                                    return <BlockItemAdmin title={item.title} about={item.about} img={item.imgLink}
+                                                           url={item.url} key={Math.random().toString()}/>;//? replace key;
+                                })}
+                            </ul> : <NewCategory/>
+                           }  */}
+                           <ul className={style.list}>
                                 {objectCategory.list.map((item) => {
                                     return <BlockItemAdmin title={item.title} about={item.about} img={item.imgLink}
                                                            url={item.url} key={Math.random().toString()}/>;//? replace key;

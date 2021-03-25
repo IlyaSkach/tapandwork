@@ -10,8 +10,8 @@
 //         return {type: 'FIX_CATEGORY'}
 // };
 
-export const addCat = (title, color) => ({
+export const addCat = (name, color) => ({
         type: "ADD_CATEGORY",
-        payload: { title, color }
+        payload: { name, color }
       });
       

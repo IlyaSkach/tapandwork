@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { useSelector } from 'react-redux'
 import AddBookmark from '../AddBookmark/AddBookmark';
 import DelCategory from '../DelCategory/DelCategory';
 import style from './NewCategory.module.css';
@@ -20,14 +20,17 @@ function NewCategory(data) {
     }
 
 
-
+ const category = useSelector(state => state.newcat.category); // * Take category from redux store
     return (
         <>
+        
 
 
             <div className='container'>
                 <div className={style.blockList}>
                     <div className={style.blockListHead}>
+
+{category.map(item => <h4 className={style.blockTitle} style={{ borderTopColor: `${item.color}` }}>{item.name}</h4>)}
 
                         {/* {data.new.map(item => <h4 className={style.blockTitle} style={{ borderTopColor: 'blue' }}>{item.title}</h4>)}; */}
 

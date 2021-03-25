@@ -13,7 +13,7 @@
 const initialState = {
     category: [
         {
-            name: "Name",
+            name: "Изброное",
             color: "#5236C1", 
             list: [
                 {
@@ -91,10 +91,10 @@ const initialState = {
 const newcat = (state = initialState, action) => {
     switch (action.type) {
       case "ADD_CATEGORY":
-        const { color, title } = action.payload;
+        const { color, name } = action.payload;
         return {
           ...state,
-          category: [...state.category, { color, title, list: [] }]
+          category: [...state.category, { color, name, list: [] }]
         };
       default:
         return state;
