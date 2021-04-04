@@ -4,14 +4,16 @@ import { delCat } from '../../actions/addCat';
 
 import style from './DelCategory.module.css'
 
-function DelCategory() {
+function DelCategory({id, setActiveWindow}) {
 
 
-    const category = useSelector(state => state.newcat.category); // * Take category from redux store
-    console.log(category)
+    // const category = useSelector(state => state.newcat.category); // * Take category from redux store
+    // console.log(category)
     const dispatch = useDispatch()
 
-    const DelCategory = (id) => {
+    const delCatC = (e) => {
+        e.preventDefault()
+       setActiveWindow(false)
         dispatch(delCat(id))
     }
 
@@ -25,7 +27,7 @@ function DelCategory() {
 Все закладки из этой категории также будут удалены</p>
 
                 <div className={style.btnGroup}>
-                    {/* <button className={style.addBtn} type="submit" onClick={() => DelCategory(objectCategory.id)}>Уалить категорию</button> */}
+                    <button className={style.addBtn} type="submit" onClick={delCatC}>Уалить категорию</button>
                     <button className={style.cancelBtn}>Отмена</button>
                 </div>
                 <button className={style.formBtnClose} >

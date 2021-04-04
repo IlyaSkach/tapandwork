@@ -22,12 +22,12 @@ function BlockListAdmin() {
         ]);*/
     const category = useSelector(state => state.newcat.category); // * Take category from redux store
     console.log(category)
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
 
-    const DelCategory = (id) => {
-        dispatch(delCat(id))
-    }
+    // const DelCategory = (id) => {
+    //     dispatch(delCat(id))
+    // }
 
 
     const [del, setDel] = useState(false);
@@ -59,7 +59,7 @@ function BlockListAdmin() {
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </button>
-                                {/* тут было */}
+                                {/* тут было */}   
                                 <button className={style.btnClose} onClick={delCat}>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -85,7 +85,7 @@ function BlockListAdmin() {
                                 })}
                             </ul>
                             {del ?
-                                <DelCategory /> : null}
+                                <DelCategory id={objectCategory} setActiveWindow={setDel} /> : null}
                         </div>
                     )
                 })}
