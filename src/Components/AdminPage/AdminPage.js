@@ -14,7 +14,7 @@ function AdminPage() {
 
             <HeaderAdmin />
             <BlockListAdmin />
-            <NewCategory />
+            {/* <NewCategory /> */}
             {/* <Addnewcat /> */}
             {/* <DelCategory/> */}
 

@@ -13,8 +13,9 @@
 const initialState = {
     category: [
         {
+            id: 1,
             name: "Изброное",
-            color: "#5236C1", 
+            color: "#5236C1",
             list: [
                 {
                     title: "Яндекс.Почта",
@@ -49,6 +50,7 @@ const initialState = {
             ]
         },
         {
+            id: 2,
             name: "Name",
             color: "#5236C1",
             list: [
@@ -88,19 +90,35 @@ const initialState = {
     ]
 };
 
+const delCat = (state, payload) => {
+    const { id } = payload
+    const idx = state.category.findIndex((el) => el.id === id)
+    let pastState = state.category.slice(0, idx)
+    let futureState = state.category.slice(idx + 1)
+    let newState = [...pastState, ...futureState]
+    return {
+        ...state,
+        category: newState,
+    }
+}
+
 const newcat = (state = initialState, action) => {
     switch (action.type) {
-      case "ADD_CATEGORY":
-        const { color, name } = action.payload;
-        return {
-          ...state,
-          category: [...state.category, { color, name, list: [] }]
-        };
-      default:
-        return state;
+        case "ADD_CATEGORY":
+            const { color, name } = action.payload;
+            return {
+                ...state,
+                category: [...state.category, { color, name, list: [{ title: null }] }]
+            };
+        case 'DEL_CATEGORY':
+            return delCat(state, action.payload)
+        default:
+            return state;
     }
-  };
-  export default newcat;
+};
+
+
+export default newcat;
 
 
 
@@ -119,12 +137,12 @@ const newcat = (state = initialState, action) => {
 //         case 'FIX_CATEGORY':
 //             return {
 //                 ...state,
-                
+
 //                 fixCategore: true
-                
+
 //             }
 
-    
+
 //         default:
 //             return state;
 //     }

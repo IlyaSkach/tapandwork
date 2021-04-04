@@ -1,7 +1,19 @@
+import { useSelector, useDispatch } from 'react-redux';
+import { delCat } from '../../actions/addCat';
+
 
 import style from './DelCategory.module.css'
 
 function DelCategory() {
+
+
+    const category = useSelector(state => state.newcat.category); // * Take category from redux store
+    console.log(category)
+    const dispatch = useDispatch()
+
+    const DelCategory = (id) => {
+        dispatch(delCat(id))
+    }
 
     return (
         <div className={style.form}>
@@ -13,7 +25,7 @@ function DelCategory() {
 Все закладки из этой категории также будут удалены</p>
 
                 <div className={style.btnGroup}>
-                    <button className={style.addBtn} type="submit">Уалить категорию</button>
+                    {/* <button className={style.addBtn} type="submit" onClick={() => DelCategory(objectCategory.id)}>Уалить категорию</button> */}
                     <button className={style.cancelBtn}>Отмена</button>
                 </div>
                 <button className={style.formBtnClose} >

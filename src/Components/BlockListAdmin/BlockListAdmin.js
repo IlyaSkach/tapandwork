@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
+import DelCategory from '../DelCategory/DelCategory';
 import BlockItem from '../BlockItem/BlockItem';
 import BlockItemAdmin from '../BlockItemAdmin/BlockItem/BlockItemAdmin';
 import NewCategory from '../NewCategory/NewCategory'
 import style from './BlockListAdmin.module.css';
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux';
+import { delCat } from '../../actions/addCat';
+
+
 
 function BlockListAdmin() {
     /* ***********
@@ -18,41 +22,55 @@ function BlockListAdmin() {
         ]);*/
     const category = useSelector(state => state.newcat.category); // * Take category from redux store
     console.log(category)
+    const dispatch = useDispatch()
+
+
+    const DelCategory = (id) => {
+        dispatch(delCat(id))
+    }
+
+
+    const [del, setDel] = useState(false);
+    const delCat = () => {
+        setDel(!del)
+    }
+
     return (
         <>
             <div className='container'>
                 {category.map((objectCategory) => {
                     return (
-                        <div className={style.blockList} key={Math.random().toString()} style={{borderTop: `3px solid ${objectCategory.color}`}}>
+                        <div className={style.blockList} key={Math.random().toString()} style={{ borderTop: `3px solid ${objectCategory.color}` }}>
                             <div className={style.blockListHead}>
                                 <h4 className={style.blockTitle}>
                                     {objectCategory.name}
                                 </h4>
                                 <button className={style.btnDown}>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
+                                        xmlns="http://www.w3.org/2000/svg">
                                         <path d="M6 9L12 15L18 9" stroke="white" stroke-width="1.5"
-                                              stroke-linecap="round" stroke-linejoin="round"/>
+                                            stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </button>
                                 <button className={style.btnUp}>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
+                                        xmlns="http://www.w3.org/2000/svg">
                                         <path d="M6 15L12 9L18 15" stroke="white" stroke-width="1.5"
-                                              stroke-linecap="round" stroke-linejoin="round"/>
+                                            stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </button>
-                                <button className={style.btnClose}>
+                                {/* тут было */}
+                                <button className={style.btnClose} onClick={delCat}>
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
+                                        xmlns="http://www.w3.org/2000/svg">
                                         <path d="M18 6L6 18" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                                              stroke-linejoin="round"/>
+                                            stroke-linejoin="round" />
                                         <path d="M6 6L18 18" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                                              stroke-linejoin="round"/>
+                                            stroke-linejoin="round" />
                                     </svg>
                                 </button>
                             </div>
-                           {/* {
+                            {/* {
                                objectCategory.list.lenght ? <ul className={style.list}>
                                 {objectCategory.list.map((item) => {
                                     return <BlockItemAdmin title={item.title} about={item.about} img={item.imgLink}
@@ -60,12 +78,14 @@ function BlockListAdmin() {
                                 })}
                             </ul> : <NewCategory/>
                            }  */}
-                           <ul className={style.list}>
+                            <ul className={style.list}>
                                 {objectCategory.list.map((item) => {
                                     return <BlockItemAdmin title={item.title} about={item.about} img={item.imgLink}
-                                                           url={item.url} key={Math.random().toString()}/>;//? replace key;
+                                        url={item.url} key={Math.random().toString()} />;//? replace key;
                                 })}
                             </ul>
+                            {del ?
+                                <DelCategory /> : null}
                         </div>
                     )
                 })}
@@ -73,6 +93,8 @@ function BlockListAdmin() {
         </>
     )
 }
+
+// onClick={() => DelCategory(objectCategory.id)}
 
 // * Draft
 /* ***********
