@@ -13,7 +13,7 @@
 const initialState = {
     category: [
         {
-            id: 1,
+                id:1,
             name: "Изброное",
             color: "#5236C1",
             list: [
@@ -50,7 +50,7 @@ const initialState = {
             ]
         },
         {
-            id: 2,
+          id:2,
             name: "Name",
             color: "#5236C1",
             list: [
@@ -107,8 +107,8 @@ const newcat = (state = initialState, action) => {
         case "ADD_CATEGORY":
             const { color, name } = action.payload;
             return {
-                ...state,
-                category: [...state.category, { color, name, list: [{ title: null }] }]
+                ...state,           
+                category: [...state.category, {color, name, list: [{ title: null }] }]
             };
         case 'DEL_CATEGORY':
             return delCat(state, action.payload)
