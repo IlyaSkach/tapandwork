@@ -4,16 +4,15 @@ import { delCat } from '../../actions/addCat';
 
 import style from './DelCategory.module.css'
 
-function DelCategory({id, setActiveWindow}) {
+function DelCategory({ id, setActiveWindow }) {
 
 
-    // const category = useSelector(state => state.newcat.category); // * Take category from redux store
-    // console.log(category)
+
     const dispatch = useDispatch()
 
     const delCatC = (e) => {
         e.preventDefault()
-       setActiveWindow(false)
+        setActiveWindow(false)
         dispatch(delCat(id))
     }
 

@@ -12,23 +12,13 @@ function AddCategory({ activeWindow }) {
 
 
     const valueInputHandler = (e) => {
-        setInputValue({ name: e.target.value }) // * Save input value on useState
+        setInputValue({ name: e.target.value }) 
     }
     const radioInputHandler = (e) => {
-        setRadioInputValue({ color: e.target.value }) // * Save radio value on useState
+        setRadioInputValue({ color: e.target.value }) 
         console.log(e)
     }
-    // const formHandler = (event) =>{ 
-    //     console.log(event.target.elements);
-    //     let data = event.target.elements;
-    //     dispatch(addCat(data.title.value, data.color.value));
-    //     event.preventDefault(); 
-    //     activeWindow(false)
-    // };
-
-    // const fixCat = (event) => {
-    //     event.preventDefault(); 
-    // }
+   
 
     const addNewCategory = (e) => {
         dispatch(addCat(inputValue.name, radioInputValue.color));

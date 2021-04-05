@@ -46,8 +46,10 @@
 }
 
 .logo{
-    width: 100px;
-    height: auto;
+    position: absolute;
+    top: 75px;
+    /* width: 100px;
+    height: auto; */
 }
 
 .btnEdition{

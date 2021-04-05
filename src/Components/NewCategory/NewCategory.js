@@ -20,35 +20,17 @@ function NewCategory(data) {
     }
 
 
- const category = useSelector(state => state.newcat.category); // * Take category from redux store
+    const category = useSelector(state => state.newcat.category); // * Take category from redux store
     return (
         <>
-        
+
 
 
             <div className='container'>
                 <div className={style.blockList}>
                     <div className={style.blockListHead}>
 
-{/* {category.map(item => <h4 className={style.blockTitle} style={{ borderTopColor: `${item.color}` }}>{item.name}</h4>)} */}
 
-                        {/* {data.new.map(item => <h4 className={style.blockTitle} style={{ borderTopColor: 'blue' }}>{item.title}</h4>)}; */}
-
-                        {/* <button className={style.btnDown}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6 9L12 15L18 9" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                        </button>
-                        <button className={style.btnUp}>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6 15L12 9L18 15" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button>
-                        <button className={style.btnClose} onClick={delCat}>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M18 6L6 18" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M6 6L18 18" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </button> */}
                     </div>
                     <ul className={style.list}>
                         <div>

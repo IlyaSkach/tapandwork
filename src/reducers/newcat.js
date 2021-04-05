@@ -1,20 +1,10 @@
-// import { fixCategore } from "../actions/addCat";
 
-// const initialState = {
-//         category: [
-//             {
-//                 title: "Name",
-//                 color: "AB14C3",
-//             }
-//         ],
-//         fixCategore: false   
-// }
 
 const initialState = {
     category: [
         {
                 id:1,
-            name: "Изброное",
+            name: "Избранное",
             color: "#5236C1",
             list: [
                 {
@@ -51,7 +41,7 @@ const initialState = {
         },
         {
           id:2,
-            name: "Name",
+            name: "Категория 1",
             color: "#5236C1",
             list: [
                 {
@@ -122,29 +112,3 @@ export default newcat;
 
 
 
-// const newcat = (state = [], action) => {
-//     switch (action.type) {
-//         case 'ADD_CATEGORY':
-//             console.log('add cat work');
-//             console.log(state);
-//             return [
-//                 ...state,
-//                 {
-//                     title: action.title,
-//                     color: action.color
-//                 }
-//             ]
-//         case 'FIX_CATEGORY':
-//             return {
-//                 ...state,
-
-//                 fixCategore: true
-
-//             }
-
-
-//         default:
-//             return state;
-//     }
-// }
-// export default newcat;
