@@ -3,7 +3,7 @@
 const initialState = {
     category: [
         {
-                id:1,
+           id:1,
             name: "Избранное",
             color: "#5236C1",
             list: [
@@ -80,6 +80,27 @@ const initialState = {
     ]
 };
 
+const addBM = (state, payload) => {
+    const {url, title, about, cat} = payload
+
+    // use map method instead of filter
+    const modifiedCategory = state.category.map(categoryItem => {
+        if (categoryItem.name == cat) {
+            let modifiedCategoryItem = {
+                list: [...categoryItem.list, {url, title, about}]
+            };
+            return modifiedCategoryItem;
+        } else {
+            return categoryItem;
+        }
+    });
+
+    return {
+        ...state,
+        category: modifiedCategory
+    }   
+};
+
 const delCat = (state, payload) => {
     const { id } = payload
     const idx = state.category.findIndex((el) => el.id === id)
@@ -102,6 +123,8 @@ const newcat = (state = initialState, action) => {
             };
         case 'DEL_CATEGORY':
             return delCat(state, action.payload)
+        case 'ADD_BOOKMARK':
+            return addBM(state, action.payload)
         default:
             return state;
     }

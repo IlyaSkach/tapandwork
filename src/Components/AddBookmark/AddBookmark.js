@@ -1,24 +1,53 @@
-
+import React from 'react'
+import {useSelector, useDispatch} from "react-redux";
+import {addBookMark} from "../../actions/addCat";
 import style from './AddBookmark.module.css'
 
 function AddBookmark() {
+     const category = useSelector(state => state.newcat.category); // New code
+     const dispatch = useDispatch() // New code
+      // New code
+    const [url, setUrl] = React.useState('');
+    const [title, setTitle] = React.useState('');
+    const [about, setAbout] = React.useState('');
+    const [cat, setCat] = React.useState('Избранное');
+    // New code
+    const inputHandlerURL = (e) => {
+        setUrl(e.target.value)
+    }
+    const inputHandlerTitle = (e) => {
+        setTitle(e.target.value)
+    }
+    const inputHandlerAbout = (e) => {
+        setAbout(e.target.value)
+    }
+    const formValue = (e) => {
+        setCat(e.target.value);
+    };
+    //
+    const addBookmark = (e) => {
+        e.preventDefault()
+        dispatch(addBookMark(url, title, about, cat))
+    }
+
+    //
     return (
         <div className={style.form}>
             <form className={style.AddBookmark} action="" >
                 <div className={style.formTitle}>
                     Новая закладка
                  </div>
-                <input className={style.formInputImg} placeholder="Фавикон или лого" />
-                <input className={style.formInput} type="url" placeholder="Ссылка URL" />
-                <input className={style.formInput} type="text" placeholder="Название" />
-                <textarea className={style.formInputText} rows='5' placeholder="Описание ссылки" />
-                <select className={style.formInput}>
-                    <option value="">Избранное</option>
-                    <option value="">Категория 1</option>
-                    <option value="">Категория 2</option>
+                <input className={style.formInputImg} placeholder="Фавикон или лого" /> {/**New code  */}
+                <input className={style.formInput} value={url} onChange={inputHandlerURL} type="url" placeholder="Ссылка URL" />
+                <input className={style.formInput} type="text" value={title} onChange={inputHandlerTitle} placeholder="Название" />
+                <textarea className={style.formInputText} value={about} onChange={inputHandlerAbout} rows='5' placeholder="Описание ссылки" />
+                <select onChange={formValue}
+                        value={cat} 
+                        className={style.formInput}>
+                  {category.map((item) => <option value={item.name} key={item.name}>{item.name}</option>)}
                 </select>
                 <div className={style.btnGroup}>
-                    <button className={style.addBtn}>Добавить закладку</button>
+                    <button className={style.addBtn} onClick={(e) => addBookmark(e)}>Добавить закладку</button>
                     <button className={style.cancelBtn}>Отмена</button>
                 </div>
                 <button className={style.formBtnClose} >
