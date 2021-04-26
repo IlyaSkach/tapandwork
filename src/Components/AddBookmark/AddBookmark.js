@@ -1,12 +1,16 @@
 import React from 'react'
-import {useSelector, useDispatch} from "react-redux";
-import {addBookMark} from "../../actions/addCat";
+import { useState } from 'react'
+import { useSelector, useDispatch } from "react-redux";
+import { addBookMark } from "../../actions/addCat";
 import style from './AddBookmark.module.css'
 
-function AddBookmark() {
-     const category = useSelector(state => state.newcat.category); // New code
-     const dispatch = useDispatch() // New code
-      // New code
+function AddBookmark({ activeWindow }) {
+
+
+
+    const category = useSelector(state => state.newcat.category); // New code
+    const dispatch = useDispatch() // New code
+    // New code
     const [url, setUrl] = React.useState('');
     const [title, setTitle] = React.useState('');
     const [about, setAbout] = React.useState('');
@@ -28,6 +32,13 @@ function AddBookmark() {
     const addBookmark = (e) => {
         e.preventDefault()
         dispatch(addBookMark(url, title, about, cat))
+        activeWindow(false)
+    }
+
+
+    const closeCategoryWindow = (e) => {
+        e.preventDefault()
+        activeWindow(false)
     }
 
     //
@@ -42,15 +53,15 @@ function AddBookmark() {
                 <input className={style.formInput} type="text" value={title} onChange={inputHandlerTitle} placeholder="Название" />
                 <textarea className={style.formInputText} value={about} onChange={inputHandlerAbout} rows='5' placeholder="Описание ссылки" />
                 <select onChange={formValue}
-                        value={cat} 
-                        className={style.formInput}>
-                  {category.map((item) => <option value={item.name} key={item.name}>{item.name}</option>)}
+                    value={cat}
+                    className={style.formInput}>
+                    {category.map((item) => <option value={item.name} key={item.name}>{item.name}</option>)}
                 </select>
                 <div className={style.btnGroup}>
                     <button className={style.addBtn} onClick={(e) => addBookmark(e)}>Добавить закладку</button>
-                    <button className={style.cancelBtn}>Отмена</button>
+                    <button className={style.cancelBtn} onClick={closeCategoryWindow}>Отмена</button>
                 </div>
-                <button className={style.formBtnClose} >
+                <button className={style.formBtnClose} onClick={closeCategoryWindow} >
                     <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 4L4 12" stroke="#696969" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         <path d="M4 4L12 12" stroke="#696969" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />

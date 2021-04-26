@@ -33,7 +33,7 @@ function HeaderAdmin() {
                         </div> : null
                     }
                     {addbookmark ?
-                        <AddBookmark /> : null}
+                        <AddBookmark activeWindow={setAddbookmark} /> : null}
 
                     {addcategory ? 
                         <AddCategory activeWindow={setAddcategory} /> : null}
